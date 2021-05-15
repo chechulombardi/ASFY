@@ -26,7 +26,7 @@ namespace ASFY_Proyecto.Controllers
         {
             return View();
         }
-        public ActionResult SobreNosotras()
+        public ActionResult QuienesSomos()
         {
             return View();
         }
