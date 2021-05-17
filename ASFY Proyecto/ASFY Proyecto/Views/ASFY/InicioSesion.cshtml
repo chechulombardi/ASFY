@@ -6,51 +6,41 @@
 <br>
 
 <div class="container">
-    <div class="row row-cols-2">
-        <div class="col">
 
-            <div class="caja">
+            <div class="card bg-light">
+                <article class="card-body mx-auto" style="max-width: 500px;">
+                    <br>
+                    <br>
+                    <h4 class="card-title mt-3 text-center">Log In</h4>
+                    <p class="text-center"></p>
 
-                <h2 class="text-center text-uppercase text-secondary">Login</h2>
-
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-
-                        <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                            <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label> <span class="input-icon"> <i class="fa fa-user"> </i> </span> Usuario</label><input class="form-control" id="name" type="text" placeholder="usuario" required="required" data-validation-required-message="Porfavor ingrese su nombre" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
+                    <form>
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                             </div>
-                            <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>  <span class="input-icon"> <i class="fa fa-lock"> </i> </span> Password</label><input class="form-control" id="pasword" type="password" placeholder="password" required="required" data-validation-required-message="Por favor ingrese su contrase;a" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
+                            <input name="" class="form-control" placeholder="Nombre de Usuario" type="text">
+                        </div> <!-- form-group// -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                             </div>
-
-                            <br />
-                            <div id="success"></div>
-                            <div class="form-group"><button class="btn btn-secondary btn-xl" id="sendMessageButton" type="submit">Login</button>  <button class="btn btn-secondary btn-xl" id="sendMessageButton" type="submit">Registrarse</button> </div>
-
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-
-
-        </div>
-        <div class="col">
-
-            <div class="card" style="width: 18rem;">
-                <img src="~/Content/Img Fitness.jpg" class="card-img-top" alt="...">
-            </div>
-
-        </div>
+                            <input class="form-control" placeholder="Ingrese contrasenia" type="password">
+                        </div> <!-- form-group// -->
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-secondary btn-block"> Log In  </button>
+                        </div> <!-- form-group// -->
+                        <p class="text-center">
+                            No tiene una cuenta? @Html.ActionLink("Registrarse", "Registrarse", "ASFY", null, new { @class = "nav-link" })
+                        </p>
+                    </form>
+                </article>
+                <br>
+                <br>
+            </div> <!-- card.// -->
     </div>
-</div>
+
+        
 
 
 <br>

@@ -3,10 +3,36 @@
     ViewBag.Title = "Home";
 }
 
+<section>
+    <div tabindex="-1" role="dialog">
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">Bienvenido </h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> &times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-light">
+                            <p> <strong> Debe iniciar sesion o registrarse para poder entrar en la pagina </strong> </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<div class=" container">
 <div class="jumbotron">
     <h1 class="display-4">Hello, world!</h1>
     <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
     <hr class="my-4">
     <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
     <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
 </div>

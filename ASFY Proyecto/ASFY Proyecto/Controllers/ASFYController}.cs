@@ -13,6 +13,11 @@ namespace ASFY_Proyecto.Controllers
             return View();
         }
 
+        public ActionResult Registrarse()
+        {
+            return View();
+        }
+
         public ActionResult Home()
         {
             return View();
