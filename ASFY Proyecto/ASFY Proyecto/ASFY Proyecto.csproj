@@ -127,8 +127,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Fitness img.png" />
-    <Content Include="Content\Img Fitness.jpg" />
+    <Content Include="Content\Img Carousel Fitness.jpg" />
+    <Content Include="Content\Img Carousel Fitness2.jpg" />
+    <Content Include="Content\Img Carousel Fitness3.jpg" />
+    <Content Include="Content\Img Carousel Fitness5.jpg" />
+    <Content Include="Content\Img Carousel Fitness6.jpg" />
+    <Content Include="Content\Img Carousel Fitness7.jpg" />
+    <Content Include="Content\Img informacion sobre ASFY.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

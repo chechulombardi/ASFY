@@ -127,3 +127,30 @@ body {
 .shadow-none {
     box-shadow: none !important;
 }
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 400px;
+    }
+
+    .modal-content {
+        padding: 1rem;
+    } 
+}
+
+.modal-header.close {
+    margin-top: -1.5rem;
+}
+
+.btn-round {
+    border-radius: 3rem;
+}
+
+.delimiter {
+    padding: 1rem;
+}
+
+
+.signup-section {
+    padding: 0.3rem 0rem;
+}
