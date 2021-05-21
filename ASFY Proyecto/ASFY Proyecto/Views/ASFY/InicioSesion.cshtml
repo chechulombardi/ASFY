@@ -5,7 +5,7 @@
 <br>
 <br>
 
-
+<!--
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -18,14 +18,21 @@
                 <div class="form-title text-center">
                     <h4>Login</h4>
                 </div>
-                <div class="d-flex  flex-column  text-center">
+
+                <div class="d-flex  flex-column">
+
                     <form>
+
                         <div class="form-group input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                            </div>
-                            <input type="text" name="" class="form-control" placeholder="Nombre de Usuario">
+                            <p class="text-center">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                </div>
+
+                                <input type="text" name="" class="form-control" placeholder="Nombre de Usuario">
+                            </p>
                         </div>
+
                         <div class="form-group input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
@@ -41,46 +48,47 @@
                     </form>
                 </div>
             </div>
-            
+
         </div>
     </div>
-    </div>
+</div>
+    -->
 
-    <div class="container">
+<div class="container">
 
-        <div class="card bg-light">
-            <article class="card-body mx-auto" style="max-width: 500px;">
-                <br>
-                <br>
-                <h4 class="card-title mt-3 text-center">Log In</h4>
-                <p class="text-center"></p>
-
-                <form>
-                    <div class="form-group input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                        </div>
-                        <input name="" class="form-control" placeholder="Nombre de Usuario" type="text">
-                    </div>
-                    <div class="form-group input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                        </div>
-                        <input class="form-control" placeholder="Ingrese contrasenia" type="password">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-secondary btn-block"> Log In  </button>
-                    </div>
-                    <p class="text-center">
-                        No tiene una cuenta? @Html.ActionLink("Registrarse", "Registrarse", "ASFY", null, new { @class = "nav-link" })
-                    </p>
-                </form>
-            </article>
+    <div class="card bg-light">
+        <article class="card-body mx-auto" style="max-width: 500px;">
             <br>
             <br>
-        </div>
+            <h4 class="card-title mt-3 text-center">Log In</h4>
+            <p class="text-center"></p>
+
+            <form>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input name="" class="form-control" placeholder="Nombre de Usuario" type="text">
+                </div>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Ingrese contrasenia" type="password">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-secondary btn-block"> Log In  </button>
+                </div>
+                <p class="text-center">
+                    No tiene una cuenta? @Html.ActionLink("Registrarse", "Registrarse", "ASFY", null, new { @class = "nav-link" })
+                </p>
+            </form>
+        </article>
+        <br>
+        <br>
     </div>
+</div>
 
 
-    <br>
-    <br>
+<br>
+<br>

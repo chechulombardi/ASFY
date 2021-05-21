@@ -134,6 +134,12 @@
     <Content Include="Content\Img Carousel Fitness6.jpg" />
     <Content Include="Content\Img Carousel Fitness7.jpg" />
     <Content Include="Content\Img informacion sobre ASFY.jpg" />
+    <Content Include="Content\IMG Programa destacado 1.jpg" />
+    <Content Include="Content\IMG Programa destacado 2.jpg" />
+    <Content Include="Content\IMG Programa destacado 3.jpg" />
+    <Content Include="Content\Persona IMG 1.jpg" />
+    <Content Include="Content\Persona IMG 2.jpg" />
+    <Content Include="Content\Persona IMG 3.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
