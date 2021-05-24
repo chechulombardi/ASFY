@@ -2,88 +2,34 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using System.Data.SqlClient;
 
 namespace ASFY_Proyecto.Models
 {
-    public class BDD : Controller
+    public static class BDD
     {
-        // GET: BDD
-        public ActionResult Index()
+        private static string _connectionString = "Server=localhost\\sqlexpress; Database=ASFY; Trusted_Connection=True";
+
+        private static SqlConnection Conectar()
         {
-            return View();
+            SqlConnection con = new SqlConnection(_connectionString);
+            con.Open();
+            return con;
         }
 
-        // GET: BDD/Details/5
-        public ActionResult Details(int id)
+        private static bool Desconectar(SqlConnection con)
         {
-            return View();
-        }
-
-        // GET: BDD/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: BDD/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
+            bool pudoDesconectar;
+            if (con.State == System.Data.ConnectionState.Open)
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                con.Close();
+                pudoDesconectar = true;
             }
-            catch
+            else
             {
-                return View();
+                pudoDesconectar = false;
             }
-        }
-
-        // GET: BDD/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: BDD/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: BDD/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: BDD/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return pudoDesconectar;
         }
     }
 }

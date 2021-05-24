@@ -124,16 +124,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ASFY.cs" />
     <Compile Include="Models\BDD.cs" />
+    <Compile Include="Models\Programas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Img Carousel Fitness.jpg" />
-    <Content Include="Content\Img Carousel Fitness2.jpg" />
-    <Content Include="Content\Img Carousel Fitness3.jpg" />
-    <Content Include="Content\Img Carousel Fitness5.jpg" />
-    <Content Include="Content\Img Carousel Fitness6.jpg" />
-    <Content Include="Content\Img Carousel Fitness7.jpg" />
+    <Content Include="Content\Carousel IMG  1.jpg" />
+    <Content Include="Content\Carousel IMG  4.jpg" />
+    <Content Include="Content\Carousel IMG 2.jpg" />
+    <Content Include="Content\Carousel IMG 3.jpg" />
+    <Content Include="Content\Carousel IMG 5.jpg" />
     <Content Include="Content\Img informacion sobre ASFY.jpg" />
     <Content Include="Content\IMG Programa destacado 1.jpg" />
     <Content Include="Content\IMG Programa destacado 2.jpg" />
