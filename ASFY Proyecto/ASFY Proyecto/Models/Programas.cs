@@ -7,5 +7,6 @@ namespace ASFY_Proyecto.Models
 {
     public class Programas
     {
+
     }
 }
