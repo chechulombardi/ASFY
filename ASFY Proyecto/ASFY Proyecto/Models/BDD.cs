@@ -42,11 +42,12 @@ namespace ASFY_Proyecto.Models
             while (lector.Read())
             {
                 int Id= Convert.ToInt32(lector["Id"]);
-                string Nombre = lector["Nombre"].ToString();
                 int IdProgrmas = Convert.ToInt32(lector["idProgramas"]);
+                string Nombre = lector["Nombre"].ToString();
+                
 
 
-                Rutinas rutinas = new Rutinas(Id, Nombre, IdProgrmas);
+                Rutinas rutinas = new Rutinas(Id, IdProgrmas, Nombre);
                 listaRutinas.Add(rutinas);
             }
             BDD.Desconectar(con);
@@ -63,10 +64,10 @@ namespace ASFY_Proyecto.Models
             while (lector.Read())
             {
                 int Id = Convert.ToInt32(lector["Id"]);
-                string Nombre = lector["Nombre"].ToString();
                 int IdProgrmas = Convert.ToInt32(lector["idProgramas"]);
+                string Nombre = lector["Nombre"].ToString();  
 
-                Rutinas rutinas = new Rutinas(Id, Nombre, IdProgrmas);
+                Rutinas rutinas = new Rutinas(Id, IdProgrmas, Nombre);
                 listaRutinasPorProgramas.Add(rutinas);
             }
             BDD.Desconectar(con);
