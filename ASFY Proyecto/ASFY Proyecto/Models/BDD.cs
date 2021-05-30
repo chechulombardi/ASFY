@@ -42,7 +42,7 @@ namespace ASFY_Proyecto.Models
             while (lector.Read())
             {
                 int Id= Convert.ToInt32(lector["Id"]);
-                int IdProgrmas = Convert.ToInt32(lector["idProgramas"]);
+                int IdProgrmas = Convert.ToInt32(lector["IdProgramas"]);
                 string Nombre = lector["Nombre"].ToString();
                 
 

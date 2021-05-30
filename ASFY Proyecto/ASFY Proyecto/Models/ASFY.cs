@@ -44,7 +44,7 @@ namespace ASFY_Proyecto.Models
             return _listaRutinas;
         }
 
-        public static List<Rutinas> ListarProductos(int codigoProgramas)
+        public static List<Rutinas> ListarRutinas(int codigoProgramas)
         {
             //Este metodo solo busca devolver la lista de productos en caso de recibir codigo de rubro
             List<Rutinas> devolver = new List<Rutinas>(); //Creo una lista
