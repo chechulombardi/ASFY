@@ -127,6 +127,7 @@
     <Compile Include="Models\ASFY.cs" />
     <Compile Include="Models\BDD.cs" />
     <Compile Include="Models\Programas.cs" />
+    <Compile Include="Models\Rutinas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

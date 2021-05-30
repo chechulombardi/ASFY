@@ -31,5 +31,47 @@ namespace ASFY_Proyecto.Models
             }
             return pudoDesconectar;
         }
+
+        public static List<Rutinas> ObtenerRutinas()
+        {
+            List<Rutinas> listaRutinas = new List<Rutinas>();
+            SqlConnection con = BDD.Conectar();
+            SqlCommand consulta = con.CreateCommand();
+            consulta.CommandText = "Select * from Programas";
+            SqlDataReader lector = consulta.ExecuteReader();
+            while (lector.Read())
+            {
+                int Id= Convert.ToInt32(lector["Id"]);
+                string Nombre = lector["Nombre"].ToString();
+                int IdProgrmas = Convert.ToInt32(lector["idProgramas"]);
+
+
+                Rutinas rutinas = new Rutinas(Id, Nombre, IdProgrmas);
+                listaRutinas.Add(rutinas);
+            }
+            BDD.Desconectar(con);
+            return listaRutinas;
+        }
+        public static List<Rutinas> ObtenerRutinasPorProgramas(int codigoProgramas)
+        {
+            List<Rutinas> listaRutinasPorProgramas = new List<Rutinas>();
+            SqlConnection con = BDD.Conectar();
+            SqlCommand consulta = con.CreateCommand();
+            consulta.CommandText = "Select * from Rutinas where Id = @Id";
+            consulta.Parameters.AddWithValue("@idRubro", codigoProgramas);
+            SqlDataReader lector = consulta.ExecuteReader();
+            while (lector.Read())
+            {
+                int Id = Convert.ToInt32(lector["Id"]);
+                string Nombre = lector["Nombre"].ToString();
+                int IdProgrmas = Convert.ToInt32(lector["idProgramas"]);
+
+                Rutinas rutinas = new Rutinas(Id, Nombre, IdProgrmas);
+                listaRutinasPorProgramas.Add(rutinas);
+            }
+            BDD.Desconectar(con);
+            return listaRutinasPorProgramas;
+        }
+
     }
 }
