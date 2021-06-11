@@ -10,6 +10,7 @@ namespace ASFY_Proyecto.Models
     {
         private static List<Rutinas> _listaRutinas = new List<Rutinas>();
         private static List<Programas> _listaProgramas = new List<Programas>();
+        private static List<UnPrograma> _listaUnPrograma = new List<UnPrograma>();
 
 
         public static List<Rutinas> listaRutinas
@@ -37,44 +38,81 @@ namespace ASFY_Proyecto.Models
             }
         }
 
+        public static List<UnPrograma> listaUnPrograma
+        {
+            get
+            {
+                return _listaUnPrograma;
+            }
+
+            private set
+            {
+                _listaUnPrograma = value;
+            }
+        }
+
         //Metodos
         public static List<Rutinas> ListarRutinas()
         {
-            //Este metodo solo busca devolver la lista de productos en caso de no recibir codigo de rubro
             return _listaRutinas;
+        }
+
+        public static List<UnPrograma> ListarUnPrograma()
+        {
+            return _listaUnPrograma;
         }
 
         public static List<Rutinas> ListarRutinas(int codigoProgramas)
         {
-            //Este metodo solo busca devolver la lista de productos en caso de recibir codigo de rubro
-            List<Rutinas> devolver = new List<Rutinas>(); //Creo una lista
-            for (int k = 0; k < _listaProgramas.Count; k++) //Recorro
+            List<Rutinas> devolver = new List<Rutinas>();
+            for (int k = 0; k < _listaProgramas.Count; k++)
             {
-                if (codigoProgramas == _listaProgramas[k].codigo) //Pregunto si el codigo que me pasaron coincide con alguno de los existentes
+                if (codigoProgramas == _listaProgramas[k].codigo)
                 {
-                    devolver.Add(_listaRutinas[k]); //En dicho caso agrego el producto que estoy mirando a la lista a devolver
+                    devolver.Add(_listaRutinas[k]);
                 }
             }
-            return devolver; //Devuelvo devolver
+            return devolver;
+        }
+
+        public static List<UnPrograma> ListarUnPrograma(int codigo)
+        {
+            List<UnPrograma> devolver = new List<UnPrograma>();
+            for (int k = 0; k < _listaUnPrograma.Count; k++)
+            {
+                if (codigo == _listaUnPrograma[k].codigo)
+                {
+                    devolver.Add(_listaUnPrograma[k]);
+                }
+            }
+            return devolver;
         }
 
         public static List<Programas> ListaProgramas()
         {
-            //Este metodo solo busca devolver la lista de rubros
+            //Este metodo solo busca devolver la lista de programas
             return _listaProgramas;
         }
 
         public static void InicializarASFY()
         {
 
-            _listaRutinas = BDD.ObtenerRutinas(); //Guardo la lista de productos invocando a obtener productos que accede a la base de datos
+            _listaRutinas = BDD.ObtenerRutinas(); //Guardo la lista de rutinas invocando a obtener rutinas que accede a la base de datos
+            _listaUnPrograma = BDD.ObtenerUnPrograma(); 
         }
 
         public static Rutinas ObtenerRutinas(int codigo)
         {
-            Rutinas rutinas = _listaRutinas.Find(x => x.codigo.Equals(codigo)); //Declaro y busco el producto
-            return rutinas; //Devuelvo el producto
+            Rutinas rutinas = _listaRutinas.Find(x => x.codigo.Equals(codigo)); //Declaro y busco el rutinas
+            return rutinas; //Devuelvo las rutinas 
         }
+
+        public static UnPrograma ObtenerProgramas(int codigo)
+        {
+            UnPrograma programas = _listaUnPrograma.Find(x => x.codigo.Equals(codigo));
+            return programas;  //Devuelve una lista de los programas
+        }
+
     }
 
 }

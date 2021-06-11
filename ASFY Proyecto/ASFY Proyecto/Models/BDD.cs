@@ -8,7 +8,7 @@ namespace ASFY_Proyecto.Models
 {
     public static class BDD
     {
-        private static string _connectionString = "Server=localhost\\sqlexpress; Database=ASFY; Trusted_Connection=True";
+        private static string _connectionString = @"Server=LAPTOP-F61O4L1M\SQLEXPRESS01; Database=ASFY; Trusted_Connection=True";
 
         private static SqlConnection Conectar()
         {
@@ -37,12 +37,12 @@ namespace ASFY_Proyecto.Models
             List<Rutinas> listaRutinas = new List<Rutinas>();
             SqlConnection con = BDD.Conectar();
             SqlCommand consulta = con.CreateCommand();
-            consulta.CommandText = "Select * from Programas";
+            consulta.CommandText = "Select * from Rutinas";
             SqlDataReader lector = consulta.ExecuteReader();
             while (lector.Read())
             {
                 int Id= Convert.ToInt32(lector["Id"]);
-                int IdProgrmas = Convert.ToInt32(lector["IdProgramas"]);
+                int IdProgrmas = Convert.ToInt32(lector["IdPrograma"]);
                 string Nombre = lector["Nombre"].ToString();
                 
 
@@ -53,18 +53,41 @@ namespace ASFY_Proyecto.Models
             BDD.Desconectar(con);
             return listaRutinas;
         }
+
+        public static List<UnPrograma> ObtenerUnPrograma()
+        {
+            List<UnPrograma> listaUnPrograma = new List<UnPrograma>();
+            SqlConnection con = BDD.Conectar();
+            SqlCommand consulta = con.CreateCommand();
+            consulta.CommandText = "Select * from Programas";
+            SqlDataReader lector = consulta.ExecuteReader();
+            while (lector.Read())
+            {
+                int Id = Convert.ToInt32(lector["Id"]);
+                string Nombre = lector["Nombre"].ToString();
+                string Descripcion = lector["Descripcion"].ToString();
+                int IdCategoria = Convert.ToInt32(lector["IdCategoria"]);
+
+
+                UnPrograma programas = new UnPrograma(Id, Nombre, Descripcion, IdCategoria);
+                listaUnPrograma.Add(programas);
+            }
+            BDD.Desconectar(con);
+            return listaUnPrograma;
+        }
+
         public static List<Rutinas> ObtenerRutinasPorProgramas(int codigoProgramas)
         {
             List<Rutinas> listaRutinasPorProgramas = new List<Rutinas>();
             SqlConnection con = BDD.Conectar();
             SqlCommand consulta = con.CreateCommand();
-            consulta.CommandText = "Select * from Rutinas where Id = @Id";
-            consulta.Parameters.AddWithValue("@idRubro", codigoProgramas);
+            consulta.CommandText = "Select * from Rutinas where IdPrograma = @Id";
+            consulta.Parameters.AddWithValue("@Id", codigoProgramas);
             SqlDataReader lector = consulta.ExecuteReader();
             while (lector.Read())
             {
                 int Id = Convert.ToInt32(lector["Id"]);
-                int IdProgrmas = Convert.ToInt32(lector["idProgramas"]);
+                int IdProgrmas = Convert.ToInt32(lector["IdPrograma"]);
                 string Nombre = lector["Nombre"].ToString();  
 
                 Rutinas rutinas = new Rutinas(Id, IdProgrmas, Nombre);

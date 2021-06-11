@@ -27,7 +27,13 @@ namespace ASFY_Proyecto.Controllers
 
         public ActionResult Programas(int codigoProgramas)
         {
-            ViewBag.ProductosMostrarRubro = BDD.ObtenerRutinasPorProgramas(codigoProgramas);
+            ViewBag.RutinasMostrarProgramas = BDD.ObtenerRutinasPorProgramas(codigoProgramas);
+            return View();
+        }
+
+        public ActionResult UnPrograma(int codigo)
+        {
+            ViewBag.Programas = BDD.ObtenerUnPrograma(codigo);
             return View();
         }
         public ActionResult MiPerfil()
