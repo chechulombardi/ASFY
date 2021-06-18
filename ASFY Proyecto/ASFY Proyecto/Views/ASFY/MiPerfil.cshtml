@@ -87,28 +87,53 @@
             </div>
             <br>
         </div>
+   
+         <center>
+            <h1> Mi calendario </h1>
+        </center>
+        
+             <div id="container">
+            <div id="header">
+                <div id="monthDisplay"></div>
+                <div>
+                    <button id="backButton">Back</button>
+                    <button id="nextButton">Next</button>
+                </div>
+            </div>
 
-        <H1 class="text-center"><strong> Calendario 2021 </strong></H1>
-        <div class="container">
-            <div class="calendar">
-                <div class="month">
-                    <i class="fas fa-angle-left prev"></i>
-                    <div class="date">
-                        <h1></h1>
-                        <p></p>
-                    </div>
-                    <i class="fas fa-angle-right next"></i>
-                </div>
-                <div class="weekdays">
-                    <div>Sun</div>
-                    <div>Mon</div>
-                    <div>Tue</div>
-                    <div>Wed</div>
-                    <div>Thu</div>
-                    <div>Fri</div>
-                    <div>Sat</div>
-                </div>
-                <div class="days"></div>
+            <div id="weekdays">
+                <div>Sunday</div>
+                <div>Monday</div>
+                <div>Tuesday</div>
+                <div>Wednesday</div>
+                <div>Thursday</div>
+                <div>Friday</div>
+                <div>Saturday</div>
+            </div>
+
+            <div id="calendar"></div>
+        </div>
+
+        <div id="newEventModal">
+            <h2>New Event</h2>
+
+            <input id="eventTitleInput" placeholder="Event Title" />
+
+            <button id="saveButton" class="button">Save</button>
+            <button id="cancelButton"class="button">Cancel</button>
+        </div>
+
+        <div id="deleteEventModal">
+            <h2>Event</h2>
+
+            <p id="eventText"></p>
+
+            <button id="deleteButton">Delete</button>
+            <button id="closeButton">Close</button>
+        </div>
+
+        <div id="modalBackDrop"></div>
+        
             </div>
         </div>
         <br>
